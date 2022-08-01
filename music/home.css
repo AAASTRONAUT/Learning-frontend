@@ -1,0 +1,42 @@
+*{
+    border:1px solid #000000;
+}
+
+.head{
+    box-sizing:border-box;
+    display:flex;
+    background-color: #1F2937;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.item{
+    
+    box-sizing:border-box;
+}
+
+.logo{
+    margin: 0 100px 75px 150px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-self: flex-start;
+    flex:0 1 300px;
+    margin: 20px 100px 0 0;
+}
+
+.desc{
+    display: flex;
+    flex-direction:column;
+    box-sizing:border-box;
+    align-self: flex-start;
+    margin: 25px 0 0 150px;
+}
+
+.head-image{
+    margin: 0 100px 0 0;
+}
+
+
