@@ -63,6 +63,7 @@
 .shuffle{
     box-sizing:border-box;
     background-color: #3882f6;
+    color: #f9faf8;
     margin-right: auto;
     margin-top:10px;
     text-align:center;
@@ -160,7 +161,7 @@
     width: 800px;
     height: 100px;
     margin:auto;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .lower-text{
@@ -171,6 +172,23 @@
 
 .call{
     font-weight:900;
-    color: #ffffff;
-    
+    font-size:18px;
+    color: #f9faf8;
+    margin: 0;
+    font-family:apple-system;
 }
+.start{
+    margin:0;
+    color: #f9faf8;
+    font-size: 16px;
+    font-family:apple-system;
+}
+
+.lower-button{
+    align-self: center;
+    color: #f9faf8;
+    border:1px solid #f9faf8;
+    padding: 4px 22px;
+    border-radius: 5px;
+}
+
