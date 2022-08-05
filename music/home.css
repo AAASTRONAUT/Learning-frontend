@@ -17,13 +17,10 @@
 
 .head-2{
     display:flex;
-    margin-top:75px;
+    margin:75px 0 100px;
     justify-content:space-between;
 }
 
-.item{
-    box-sizing:border-box;
-}
 
 .logo{
     margin-left:150px;
@@ -67,8 +64,113 @@
     box-sizing:border-box;
     background-color: #3882f6;
     margin-right: auto;
-    margin-top:5px;
+    margin-top:10px;
     text-align:center;
     padding:5px;
-    border-radius:10px;
+    border-radius:5px;
+}
+
+
+.favourite{
+    max-width:1200px;
+    height:375px;
+    margin:auto;
+    background-color: #fff8f8;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+.row-1{
+    box-sizing:border-box;
+    text-align: center;
+    
+    color: #1f2937;
+    font-weight:900;
+    font-size: 36px;
+}
+
+.row-2 , .row-3{
+    display: flex;
+    justify-content: center;
+}
+
+.top , .item{
+    box-sizing: border-box;
+    width: 130px;
+    height: 130px;
+    margin: 0 20px;
+}
+
+.top{
+    border: 5px solid #3882f6;
+    border-radius: 10px;
+    
+}
+
+.item{
+    color: #3c3c42;
+    text-align: center;
+    margin-top:10px;
+    height: 25px;
+    margin-bottom: 75px;
+}
+
+.quote{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    height: 350px;
+    background-color: #e5e7eb;
+}
+
+.text{
+    box-sizing: border-box;
+    font-size: 36px;
+    color: #1f2937;
+    font-style: italic;
+    text-align: center;
+    margin: 0 100px;
+}
+
+.by{
+    box-sizing: border-box;
+    align-self: flex-end;
+    color: #0c0f13;
+    margin-right: 100px;
+    font-weight: 900;
+    font-size: 28px;
+} 
+
+.footer{
+    display: flex;
+    background-color: #fff8f8;
+    max-width: 1200px;
+    height: 275px;
+    margin: auto;
+}
+
+.lower-box{
+    display: flex;
+    justify-content: space-around;
+    background-color: #3882f6;
+    width: 800px;
+    height: 100px;
+    margin:auto;
+    border-radius: 10px;
+}
+
+.lower-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.call{
+    font-weight:900;
+    color: #ffffff;
+    
 }
