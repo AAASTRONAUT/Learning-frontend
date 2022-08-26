@@ -31,23 +31,25 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-function game(){
-    let score;
-    let count = 0;
-    let playerSelection;
-    for(let i =1; i<=5; i++){
-        playerSelection = (prompt("enter yout choice:(rock, paper, scissors)")).trim().toLowerCase()
-        score = playRound(playerSelection, getComputerChoice());
-        if (score == 'you win') {
-            console.log('win');
-            count += 1;
-        }
-        else if (score == 'you loose'){
-            console.log('loose');
-        }
-        else console.log('draw');
-    }
-    (count > 2)? console.log('You win the game'): console.log('you loose the game');
-}
+// function game(){
+//     let score;
+//     let count = 0;
+//     let playerSelection;
+//     for(let i =1; i<=5; i++){
+//         playerSelection = (prompt("enter yout choice:(rock, paper, scissors)")).trim().toLowerCase()
+//         score = playRound(playerSelection, getComputerChoice());
+//         if (score == 'you win') {
+//             console.log('win');
+//             count += 1;
+//         }
+//         else if (score == 'you loose'){
+//             console.log('loose');
+//         }
+//         else console.log('draw');
+//     }
+//     (count > 2)? console.log('You win the game'): console.log('you loose the game');
+// }
 
-game()
+// game()
+
+

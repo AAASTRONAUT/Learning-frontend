@@ -1,0 +1,55 @@
+body {
+    background-image: url("background.jpeg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+@font-face {
+    font-family: Star;
+    src: url(StarTrebek-7BEmw.ttf);
+}
+
+.players{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.players div{
+    font-size:100px;
+    font-family:  Star;
+    color: #191313;
+}
+
+p{
+    text-align:center;
+    margin: 20px 0 20px 0;
+}
+
+.score{
+    font-size:80px;
+}
+
+.tools{
+    display: flex;
+    justify-content: center;
+}
+
+.tools img {
+    height:150px;
+    width:auto;
+    margin: 25px;
+    background-color:#191313;
+    border-radius: 20px;
+    padding: 50px;
+    transition:300ms;
+    opacity:0.85;
+}
+
+.afterclick{
+    transform:scale(1.1);
+    border: 5px solid yellow;
+}
+
+
+
+
