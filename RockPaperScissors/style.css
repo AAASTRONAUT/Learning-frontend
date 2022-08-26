@@ -11,13 +11,15 @@ body {
 
 .players{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap:wrap;
 }
 
 .players div{
     font-size:100px;
     font-family:  Star;
     color: #191313;
+    margin:50px;
 }
 
 p{
@@ -32,12 +34,13 @@ p{
 .tools{
     display: flex;
     justify-content: center;
+    flex-wrap:wrap;
 }
 
 .tools img {
     height:150px;
     width:auto;
-    margin: 25px;
+    margin: 30px;
     background-color:#191313;
     border-radius: 20px;
     padding: 50px;
@@ -45,11 +48,38 @@ p{
     opacity:0.85;
 }
 
-.afterclick{
+#afterhover{
     transform:scale(1.1);
     border: 5px solid yellow;
+    opacity:1;
 }
 
+
+.resultDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.resultStyle , .finalResult{
+    font-size: 100px;
+    color: #e0e5ec;
+    font-family:star;
+    text-align:center;
+    margin: 20px;
+}
+
+.retry{
+    font-size:50px;
+    font-family:star;
+    color:#e0e5ec;
+    background-color: #182348;
+    margin:auto;
+    border-radius:20px;
+    padding:10px 50px;
+    width:500px;
+}
 
 
 
