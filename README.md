@@ -1,1 +1,1 @@
-Here are all the websites that I created while learning frontend-development
+Here are all the initial short projects that I created during learning full-stack foundation.
