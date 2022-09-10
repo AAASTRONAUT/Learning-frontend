@@ -21,6 +21,8 @@ function changeColor(e) {
     if (e.type=="mousedown") {
         console.log(e.type);
         e.target.addEventListener('mouseover', (e) =>{
+            console.log(e.target)
+            console.log(e.type)
             e.target.backgroundcolor = 'black';
         });
     } 
