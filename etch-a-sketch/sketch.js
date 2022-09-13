@@ -1,7 +1,6 @@
 const grid = document.querySelector(".grid");
 
-
-function createGrid(size = 16) {
+function createGrid(size) {
     for (let rowNumber = 1; rowNumber <= size; rowNumber++) {
         const row = document.createElement('div');
         row.classList.add('box');
@@ -14,27 +13,121 @@ function createGrid(size = 16) {
         }
     }
 }
-createGrid();
 
+//size of Grid
+const slider=document.querySelector(".slider");
+const gridSize = document.querySelector(".sizeValue");
+gridSize.textContent = `${slider.value}X${slider.value}`;
+createGrid(16);
+let boxes = document.querySelectorAll('.select');
+slider.oninput = () => {
+    sizeNum = slider.value;
+    grid.innerHTML = ''; //remove the existing grid
+    if (sizeNum==0) {
+        gridSize.textContent = '1X1';
+        createGrid(1);
+    }
+    else{
+        gridSize.textContent = `${sizeNum}X${sizeNum}`;
+        createGrid(sizeNum);
+    }
+    boxes = document.querySelectorAll('.select');
+};
 
-function changeColor(e) {
-    if (e.type=="mousedown") {
-        console.log(e.type);
-        e.target.addEventListener('mouseover', (e) =>{
-            console.log(e.target)
-            console.log(e.type)
-            e.target.backgroundcolor = 'black';
-        });
+//showGrid button
+const showGridBtn = document.querySelector('#showGridBtn');
+showGridBtn.onclick = () => {
+    boxes.forEach((box) => box.classList.toggle('border'));
+};
+
+//color picker
+let mode = 'colorMode';
+let alpha = 0.1; // for shade mode
+let color = 'black';
+let colorPicker = document.querySelector('#colorPicker');
+colorPicker.oninput = () => {
+    mode='colorMode';
+    color=colorPicker.value
+};
+
+//clear button
+const clearBtn = document.querySelector('#clearBtn');
+clearBtn.onclick = () => boxes.forEach((box) => {box.removeAttribute('style')});
+
+// program for colouring the grid.
+const colorSetter = (e) => {
+    if (mode=='rainbow') {
+        let red = Math.floor(Math.random()*256);
+        let green = Math.floor(Math.random()*256);
+        let blue = Math.floor(Math.random()*256);
+        color = `rgb(${red}, ${green}, ${blue})`;
     } 
+    else if (mode == 'eraser') color='white';
+
+    else if (mode=='shade') {
+        //***********************to be completed*******************************
+    }
+    e.target.style.backgroundColor=color;
+};
+
+function colorChanger(e)  {
+    if (e.type == 'mousedown') {
+        boxes.forEach((box) => box.addEventListener('mouseenter', colorSetter));
+        boxes.forEach((box) => box.addEventListener('mousedown', colorSetter));
+    }
+    else if (e.type == 'mouseup') {
+        boxes.forEach((box) => box.removeEventListener('mouseenter', colorSetter));
+    }
 }
-
-
 function fillColor() {
-    const boxes = document.querySelectorAll('.select');
     boxes.forEach((box) => {
-        box.addEventListener('mousedown', changeColor);
-
+        box.addEventListener('mousedown', colorChanger);
+        box.addEventListener('mouseup', colorChanger);
     });
 }
+//program for colouring the grid ends here.
 
-fillColor();
+fillColor();  //default color='black'
+
+
+ //eraser button
+const eraserBtn = document.querySelector('#eraserBtn');
+eraserBtn.onclick = () => {
+    mode='eraser';
+    fillColor();
+};
+ 
+//rainbow  Button
+rainbowBtn = document.querySelector('#rainbowBtn');
+rainbowBtn.onclick = () => {
+    mode = 'rainbow';
+    fillColor();
+};
+
+//shade Button
+const shadeBtn = document.querySelector('#shadeBtn');
+shadeBtn.onclick = () => {
+    mode = 'shade';
+    fillColor();
+}; 
+
+// hover and click effect of buttons
+menuBtns = document.querySelectorAll('button, #colorPicker');
+toggleBtns = document.querySelectorAll('.toggleBtn');
+menuBtns.forEach((Btn) => {
+    Btn.addEventListener('mouseenter', (e) =>{
+        Btn.classList.add('onHover');
+    });
+    Btn.addEventListener('mouseleave', (e) => {
+        Btn.classList.remove('onHover');
+    });
+
+    Btn.onclick = () => {
+        toggleBtns.forEach( (Btn) => {
+            Btn.classList.remove('onClick');
+        });
+        Btn.classList.add('onClick');
+    };
+});
+
+showGridBtn.onclick= () => showGridBtn.classList.toggle('onClick'); //click effect of show/hide grid buttion
